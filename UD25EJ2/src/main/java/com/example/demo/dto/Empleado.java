@@ -22,11 +22,12 @@ public class Empleado {
 	@JoinColumn(name="departamento_id")
 	private Departamento departamentos;
 
-	public Empleado(String id, String nombre, String apellidos) {
+	public Empleado(String id, String nombre, String apellidos, Departamento departamento) {
 		//super();
 		this.id = id;
 		this.nombre = nombre;
 		this.apellidos = apellidos;
+		this.departamentos = departamento;
 	}
 
 	public Empleado() {
@@ -57,11 +58,11 @@ public class Empleado {
 		this.apellidos = apellidos;
 	}
 
-	public Departamento getDepartamentos() {
+	public Departamento getDepartamento() {
 		return departamentos;
 	}
 
-	public void setDepartamentos(Departamento departamentos) {
+	public void setDepartamento(Departamento departamentos) {
 		this.departamentos = departamentos;
 	}
 

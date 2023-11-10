@@ -29,12 +29,11 @@ public class Departamento {
 	@JoinColumn(name="departamento_id")
 	private List<Empleado> empleado;
 
-	public Departamento(Long id, String nombre, int presupuesto, List<Empleado> empleado) {
+	public Departamento(Long id, String nombre, int presupuesto) {
 		//super();
 		this.id = id;
 		this.nombre = nombre;
 		this.presupuesto = presupuesto;
-		this.empleado = empleado;
 	}
 	
 	public Departamento() {
@@ -70,7 +69,7 @@ public class Departamento {
 	}
 
 	@JsonIgnore
-	@OneToMany(fetch = FetchType.LAZY, mappedBy="Articulo")
+	@OneToMany(fetch = FetchType.LAZY, mappedBy="Empleado")
 	public void setEmpleado(List<Empleado> empleado) {
 		this.empleado = empleado;
 	}

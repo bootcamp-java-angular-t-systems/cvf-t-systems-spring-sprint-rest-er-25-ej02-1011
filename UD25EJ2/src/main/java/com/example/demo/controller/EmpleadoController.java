@@ -21,40 +21,40 @@ public class EmpleadoController {
 
 	@Autowired
 	EmpleadoServiceImpl empladoService;
-	
+
 	@GetMapping("/all")
 	public List<Empleado> getAll() {
 		return empladoService.findAll();
 	}
-	
+
 	@GetMapping("/{id}")
-	public Empleado getById(@PathVariable(name="id") String id) {
+	public Empleado getById(@PathVariable(name = "id") String id) {
 		return empladoService.findById(id);
 	}
-	
-	
+
 	@PostMapping("")
-	public Empleado create(@RequestBody Empleado articulo) {
-		return empladoService.save(articulo);
+	public Empleado create(@RequestBody Empleado emplado) {
+		return empladoService.save(emplado);
 	}
-	
+
 	@PutMapping("/{id}")
-	public Empleado update(@PathVariable(name="id")String id,@RequestBody Empleado empleado) {
-		
-		Empleado articuloSeleccionado= new Empleado();
-		
-		articuloSeleccionado= empladoService.findById(id);
-		
-		articuloSeleccionado.setNombre(empleado.getNombre());
-		articuloSeleccionado.setApellidos(empleado.getApellidos());
-		
-		articuloSeleccionado = empladoService.update(articuloSeleccionado);
-		
-		return articuloSeleccionado;
+	public Empleado update(@PathVariable(name = "id") String id, @RequestBody Empleado empleado) {
+
+		Empleado empladoSeleccionado = new Empleado();
+
+		empladoSeleccionado = empladoService.findById(id);
+
+		empladoSeleccionado.setNombre(empleado.getNombre());
+		empladoSeleccionado.setApellidos(empleado.getApellidos());
+		empladoSeleccionado.setDepartamento(empleado.getDepartamento());
+
+		empladoSeleccionado = empladoService.update(empladoSeleccionado);
+
+		return empladoSeleccionado;
 	}
-	
+
 	@DeleteMapping("/{id}")
-	public void delete(@PathVariable(name="id") String id) {
+	public void delete(@PathVariable(name = "id") String id) {
 		empladoService.delete(id);
 	}
 }
