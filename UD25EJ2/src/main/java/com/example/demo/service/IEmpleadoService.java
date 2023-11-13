@@ -7,12 +7,12 @@ import com.example.demo.dto.Empleado;
 public interface IEmpleadoService {
 	public List<Empleado> findAll();
 
-	public Empleado findById(int id);
+	public Empleado findById(String id);
 
 	public Empleado update(Empleado empleado);
 
 	public Empleado save(Empleado empleado);
 
-	public void delete(int id);
+	public void delete(String id);
 
 }

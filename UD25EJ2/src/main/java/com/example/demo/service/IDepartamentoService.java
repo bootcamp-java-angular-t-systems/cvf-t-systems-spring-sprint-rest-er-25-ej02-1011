@@ -8,12 +8,12 @@ public interface IDepartamentoService {
 	
 	public List<Departamento> findAll();
 
-	public Departamento findById(int id);
+	public Departamento findById(Long id);
 
 	public Departamento update(Departamento articulo);
 
 	public Departamento save(Departamento departamento);
 
-	public void delete(int id);
+	public void delete(Long id);
 
 }
